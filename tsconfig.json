@@ -1,0 +1,11 @@
+{
+    "extends": "./node_modules/adaptiveweb/tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": ".",
+        "outDir": "build",
+        "declaration": false,
+        "noImplicitReturns": false
+    },
+    "compileOnSave": true
+}

@@ -1,0 +1,26 @@
+{
+    "name": "@adaptiveweb/alt-tag-generator",
+    "version": "1.0.0",
+    "description": "Generates descriptions of images which lack alt-tags",
+    "main": "index.ts",
+    "scripts": {
+        "start": "awcli watch",
+        "build": "awcli build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TheAdaptiveWeb/AltTagGenerator.git"
+    },
+    "bugs": {
+        "url": "https://github.com/TheAdaptiveWeb/AltTagGenerator.git/issues"
+    },
+    "homepage": "https://github.com/TheAdaptiveWeb/AltTagGenerator.git#readme",
+    "author": "adamhirst",
+    "license": "MPL-2.0",
+    "dependencies": {
+        "adaptiveweb": "^1.0.1-alpha5",
+        "ts-loader": "^5.3.3",
+        "typescript": "^3.4.1",
+        "webpack": "^4.29.6"
+    }
+}
