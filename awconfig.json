@@ -1,7 +1,7 @@
 {
     "name": "Image Description",
     "id": "alt-tag-generator",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Generates descriptions of images with no alt-tags",
     "script": "index.ts",
     "webpackConfig": "./webpack.config.js",

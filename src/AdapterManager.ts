@@ -27,23 +27,17 @@ export class AdapterManager {
                 img.tabIndex = 0;
                 img.addEventListener('focus', () => { 
                     this.selected = img;
-                    console.log('setting selected image', img)
                 });
                 img.addEventListener('blur', () => { if (this.selected === img) this.selected = undefined; });
             }
         }
 
         window.addEventListener('keydown', (event: KeyboardEvent) => {
-            console.log('key', event.key === 'Enter')
             if (event.key === 'Enter') {
-                console.log('Describe intent');
                 if (this.selected === undefined) return;
                 if (this.selected.alt !== this.predescribeMessage) return;
 
-                console.log('Passed validation');
                 let img = this.selected;
-                img.alt = this.generatingMessage;
-                img.setAttribute('aria-live', this.generatingMessage);
 
                 let canvas: HTMLCanvasElement = document.createElement('canvas');
                 let ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
@@ -57,7 +51,7 @@ export class AdapterManager {
                 canvas.toBlob((blob: Blob | null) => {
                     if (blob === null) return;
                     describeImage(this.aw, blob).then(caption => {
-                        console.log('Got caption', caption);
+                        caption = 'Image may contain ' + caption;
                         img.alt = caption;
                         img.setAttribute('aria-live', caption);
                         img.focus();
